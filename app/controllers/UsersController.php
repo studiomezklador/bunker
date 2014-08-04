@@ -9,9 +9,9 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		$users = User::all();
+		//$users = User::all();
 
-		return View::make('users.index', compact('users'));
+		return View::make('users.index');
 	}
 
 	/**
@@ -22,6 +22,18 @@ class UsersController extends \BaseController {
 	public function create()
 	{
 		return View::make('users.create');
+	}
+
+	public function check()
+	{
+		$loginDatas = [
+			'name' => Input::get('q1'),
+			'pwd' => Input::get('q2')
+		]
+		if (Auth::attempt($loginDatas)) {
+			return View::make('dashboard.index')->withMessage('Correct credentials.');
+		}
+		return Redirect::route('users.index')->withInputs()->WithMessage('Bad credentials.')
 	}
 
 	/**

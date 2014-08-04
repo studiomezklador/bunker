@@ -9,8 +9,7 @@
 					</div>
 				</div>
 				{{ Form::open([
-						'action' => ['UsersController@check', compact(Input::all())],
-						'method' => 'POST',
+						'route' => 'session.store',
 						'autocomplet' => 'off',
 						'class' => 'fs-form fs-form-full'
 					]) }}
@@ -20,11 +19,11 @@
 							{{ Form::text("q1", null, ['class' => 'fs-anim-lower', 'id' => 'q1', 'placeholder' => 'darthVador']) }}
 						</li>
 						<li>
-							{{ Form::label("pwd", "Pass Word?", ['class'=> 'fs-field-label fs-anim-upper', 'id' => 'q2']) }}
+							{{ Form::label("q2", "Pass Word?", ['class'=> 'fs-field-label fs-anim-upper', 'id' => 'q2']) }}
 							{{ Form::password("q2", ['class' => 'fs-anim-lower']) }}
 						</li>
 					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit">Check</button>
+					{{ Form::submit("Check", ['class' => 'fs-submit']) }}
 				{{ Form::close() }}<!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 @stop

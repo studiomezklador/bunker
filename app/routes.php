@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function()
-{
-	// return View::make('hello');
-	return View::make('users.index');
-});
+Route::get('/', ['uses' => 'SessionController@create', 'as' => 'session.create']);
+
+Route::post('login', ['uses' => 'SessionController@store', 'as' => 'session.store']);
+
+Route::get('logout', ['uses' => 'SessionController@destroy', 'as' => 'session.destroy']);
+
