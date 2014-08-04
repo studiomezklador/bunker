@@ -5,6 +5,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 ## ADDITIONS
 
 Way/Generators -> scaffolding generators
+
 Intervention/Image -> img processing with PHP [Documentation en ligne](http://image.intervention.io/)
 
 ### Intentions
