@@ -3,18 +3,21 @@
 @section('content')
 	<div class="fs-form-wrap" id="fs-form-wrap">
 				<div class="fs-title">
-					<h1>Project Worksheet</h1>
+					<h1>[The BUNKER!]</h1>
 					<div class="codrops-top">
-						<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/NotificationStyles/"><span>Previous Demo</span></a>
-						<a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19520"><span>Back to the Codrops Article</span></a>
-						<a class="codrops-icon codrops-icon-info" href="#"><span>This is a demo for a fullscreen form</span></a>
+						<a class="codrops-icon codrops-icon-info" href="#"><span>Full API to manage Portfolio & Blog section of Root Web Site.</span></a>
 					</div>
 				</div>
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+				{{ Form::open([
+						'url' => 'foo/bar',
+						'method' => 'POST',
+						'autocomplet' => 'off',
+						'class' => 'fs-form fs-form-full'
+					]) }}
 					<ol class="fs-fields">
 						<li>
-							<label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" required/>
+							{{ Form::label("name", "User Name?", ['class' => 'fs-field-label fs-anim-upper', 'id' => 'q1']) }}
+							{{ Form::text("q1", "darthVador", ['class' => 'fs-anim-lower', 'id' => 'q1']) }}
 						</li>
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your email address?</label>
@@ -64,6 +67,6 @@
 						</li>
 					</ol><!-- /fs-fields -->
 					<button class="fs-submit" type="submit">Send answers</button>
-				</form><!-- /fs-form -->
+				{{ Form::close() }}<!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 @stop

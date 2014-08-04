@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://archi.local/bunker/public/',
+	'url' => 'http://llii.fr',
 
 	/*
 	|--------------------------------------------------------------------------

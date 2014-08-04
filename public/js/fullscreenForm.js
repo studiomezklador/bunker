@@ -92,6 +92,7 @@
 
 		// total fields
 		this.fieldsCount = this.fields.length;
+		console.log("Nbr of Fields = " + this.fieldsCount);
 
 		// show first field
 		classie.add( this.fields[ this.current ], 'fs-current' );
