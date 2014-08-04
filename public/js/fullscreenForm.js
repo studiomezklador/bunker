@@ -89,10 +89,11 @@
 
 		// all fields
 		this.fields = [].slice.call( this.fieldsList.children );
+		// console.log(this.fields);
 
 		// total fields
 		this.fieldsCount = this.fields.length;
-		console.log("Nbr of Fields = " + this.fieldsCount);
+		//console.log(this.fields[this.current]);
 
 		// show first field
 		classie.add( this.fields[ this.current ], 'fs-current' );

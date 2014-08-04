@@ -78,4 +78,3 @@ if ( typeof define === 'function' && define.amd ) {
 }
 
 })( window );
-1914 X 1079
