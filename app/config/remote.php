@@ -29,9 +29,9 @@ return array(
 	'connections' => array(
 
 		'production' => array(
-			'host'      => 'llii.fr',
+			'host'      => 'archi.local',
 			'username'  => 'root',
-			'password'  => 'Fanou1968',
+			'password'  => 'root',
 			'key'       => '',
 			'keyphrase' => '',
 			'root'      => '/home/www/',
