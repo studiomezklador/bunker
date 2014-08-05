@@ -6,10 +6,10 @@ class UserTableSeeder extends Seeder {
 		$user = new User;
 
 		$user->fill([
-				'name' => 'admin',
-				'mail' => 'contact@studiomzk.com'
+				'username' => 'admin',
+				'email' => 'contact@studiomzk.com'
 			]);
-		$user->pwd = Hash::make('1234');
+		$user->password = Hash::make('1234');
 
 		$user->save();
 	}

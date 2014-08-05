@@ -15,15 +15,20 @@ class SessionController extends BaseController {
 
 	public function store()
 	{
-		if (Auth::attempt(['name' => Input::get('q1'), 'pwd' => Input::get('q2')])) {
-			return Redirect::intended('/');
-		}
-		return Redirect::route('session.create')->withInput()->withMessage('Bad credentials.');
+		$credentials = Input::all();
+		$somebody = $credentials['username'];
+		$attempt = Auth::attempt([
+					'username' => $somebody,
+					'password' => $credentials['password']
+				], NULL);
+		if ($attempt) return Redirect::home();
+		// ELSE
+		return Redirect::route('session.create')->withInput()->with('flash','Bad credentials.');
 	}
 
 	public function destroy()
 	{
 		Auth::logout();
-		return View::make('session.destroy');
+		return Redirect::home();
 	}
 }
