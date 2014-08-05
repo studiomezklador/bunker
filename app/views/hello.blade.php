@@ -1,14 +1,19 @@
 @extends('layouts.dashboard')
 
+{{ $username = Auth::user()->username }}
+
 @section('content')
+
 	<div class="row">
-		<h1>Welcome to The BUNKER's DashBoard.</h1>
+	<div class="col-lg-6">
+		<h1>Welcome <strong class="text-uppercase">{{ $username }}</strong> to The BUNKER's DashBoard.</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit magnam quibusdam laudantium, ipsum maxime a tempora odio cumque consectetur voluptatum ipsam blanditiis dolores pariatur expedita eaque, ipsa nostrum quasi asperiores.</p>
 	</div>
-	<div class="row">
-		<h2>Section 1</h2>
+	<div class="col-lg-6">
+		<h2>Many rivers 2 Cross...</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla vero, omnis repudiandae, consectetur maxime, harum sit, quod iusto sint repellat quaerat ipsam. Aliquid quae earum laborum veniam illo excepturi qui!</p>
 	</div>
+	<hr />
 	<!-- STATISTICS -->
 	<div class="row">
         <div class="col-lg-12">
