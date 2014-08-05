@@ -1,6 +1,6 @@
 <?php
 
-class SessionController extends BaseController {
+class SessionsController extends BaseController {
 	protected $user;
 
 	public function __contruct(User $user)
@@ -10,7 +10,7 @@ class SessionController extends BaseController {
 
 	public function create()
 	{
-		return View::make('session.create');
+		return View::make('sessions.create');
 	}
 
 	public function store()
@@ -23,7 +23,7 @@ class SessionController extends BaseController {
 				], NULL);
 		if ($attempt) return Redirect::home();
 		// ELSE
-		return Redirect::back()->withInput()->with('flash','Bad credentials.');
+		return Redirect::back()->withInput()->with('msg','Bad credentials.');
 	}
 
 	public function destroy()

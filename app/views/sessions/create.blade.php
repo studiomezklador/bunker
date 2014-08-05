@@ -8,8 +8,18 @@
 						<a class="codrops-icon codrops-icon-info" href="#"><span>Full API to manage Portfolio & Blog section of Root Web Site.</span></a>
 					</div>
 				</div>
+
+					@if (Session::has('msg'))
+						<div id="flash" class="modal fade">
+							<h4>ALERT!</h4>
+							<div class="modal-body">
+								<p class="text-warning">{{ Session::get('msg') }}</p>
+							</div>
+						</div>
+					@endif
+
 				{{ Form::open([
-						'route' => 'session.store',
+						'route' => 'sessions.store',
 						'autocomplet' => 'off',
 						'class' => 'fs-form fs-form-full'
 					]) }}

@@ -133,3 +133,14 @@ a:hover, a:focus {
 	max-width: 300px;
 	text-align: left;
 }
+
+.modal {
+	position: relative;
+	text-align: center;
+	top:25%;
+	margin-left:45%;
+	background: #7b828c;
+	width:250px;
+	padding: 2em;
+	border-radius:6px;
+}
