@@ -23,7 +23,7 @@ class SessionController extends BaseController {
 				], NULL);
 		if ($attempt) return Redirect::home();
 		// ELSE
-		return Redirect::route('session.create')->withInput()->with('flash','Bad credentials.');
+		return Redirect::back()->withInput()->with('flash','Bad credentials.');
 	}
 
 	public function destroy()
