@@ -33,7 +33,7 @@
 							{{ Form::password("password", ['class' => 'fs-anim-lower']) }}
 						</li>
 					</ol><!-- /fs-fields -->
-					{{ Form::button("Check", ['class' => 'fs-submit']) }}
+					{{ Form::submit("Check", ['class' => 'fs-submit']) }}
 				{{ Form::close() }}<!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 @stop

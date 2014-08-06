@@ -3,7 +3,7 @@
 class SessionsController extends BaseController {
 	protected $user;
 
-	public function __contruct(User $user)
+	public function __construct(User $user)
 	{
 		$this->user = $user;
 	}

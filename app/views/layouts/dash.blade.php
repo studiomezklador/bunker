@@ -1,3 +1,4 @@
+{{ $username = Auth::user()->username }}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,17 +16,13 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    {{ HTML::style("css/dashboard/sb-admin.css") }}
+    <link href="css/dashboard/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    {{ HTML::style("css/dashboard/morris.css") }}
+    <link href="css/dashboard/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <!-- Font Awesome -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Google Font : Raleway -->
-    <link href='http://fonts.googleapis.com/css?family=Raleway:200' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Who is it? {{ $username = Auth::user()->username }} -->
+
 </head>
 
 <body>
@@ -50,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">[ The BUNKER ]</a>
+                <a class="navbar-brand" href="index.html">[The BUNKER]</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -156,19 +153,8 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
+                    <li class="active">
                         <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> Utilisateurs <i class="fa fa-fw"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="{{ URL::route('users.create') }}" class=""><span class="glyphicon glyphicon-new-window"></span> Créer un pseudo</a>
-                            </li>
-                            <li>
-                                <a href="{{ URL::route('users.all') }}"><span class="glyphicon glyphicon-list"></span> Liste des pseudos</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
@@ -208,7 +194,7 @@
 
             <div class="container-fluid">
 
-                @yield('content')
+            @yield('content')
 
             </div>
             <!-- /.container-fluid -->

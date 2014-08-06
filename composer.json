@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"way/generators": "2.*",
-		"intervention/image": "2.*"
+		"intervention/image": "2.*",
+		"fzaninotto/faker": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
