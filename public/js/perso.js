@@ -1,6 +1,6 @@
 (function($){
 	// comment
 	$(document).ready(function(){
-		$("#flash").hide(5000);
+		$("#flash").fadeOut(2800);
 	});
 })(jQuery);
