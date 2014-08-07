@@ -10,8 +10,17 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit magnam quibusdam laudantium, ipsum maxime a tempora odio cumque consectetur voluptatum ipsam blanditiis dolores pariatur expedita eaque, ipsa nostrum quasi asperiores.</p>
 	</div>
 	<div class="col-lg-6">
-		<h2>Many rivers 2 Cross...</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla vero, omnis repudiandae, consectetur maxime, harum sit, quod iusto sint repellat quaerat ipsam. Aliquid quae earum laborum veniam illo excepturi qui!</p>
+		<h2>Utilisateurs</h2>
+        <ol>
+    		@foreach (User::get() as $guy)
+                @if ($guy['id'] != Auth::user()->id)
+                    <?php $class = ''; ?>
+                @else
+                    <?php $class = 'class="activuser"'; ?>
+                @endif
+                <li class="nolink"><a href="{{ URL::route('users.edit', $guy->id) }}" {{ $class }}>{{ $guy->username }}</a></li>
+            @endforeach
+        </ol>
 	</div>
 	<hr />
 	<!-- STATISTICS -->

@@ -48,7 +48,7 @@ class UsersController extends \BaseController {
 		$user->save();
 
 		$new_user = Input::get('username');
-		Redirect::to('users/')->with(['msg' => "Le Pseudo <strong>$new_user</strong> a été créé."]);
+		return Redirect::route('users.index')->with(['msg' => "Le Pseudo <strong>$new_user</strong> a été créé."]);
 	}
 
 	/**
@@ -106,8 +106,10 @@ class UsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		User::destroy($id);
-		return Redirect::route('users.all');
+		$user = User::findOrFail($id);
+		$name = $user->username;
+		$user->destroy($id);
+		return Redirect::route('users.index')->with(['msg' => "Le Pseudo <strong>$name</strong> a été supprimé."]);
 	}
 
 }

@@ -3,16 +3,6 @@
 @section('content')
 
 	<div class="row">
-		@if (Session::has('msg'))
-			<div class="alert alert-success">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				 <h4>AVERTISSEMENT !</h4>
-				<p>{{ Session::get('msg') }}</p>
-			</div>
-		@endif
-	</div>
-
-	<div class="row">
 		<h1 class="page-header">Édition de l'utilisateur</h1>
 	</div>
 
@@ -33,7 +23,7 @@
 				</div>
 				<div class="form-group">
 					{{ Form::submit("Modifier", ['class' => 'btn btn-default']) }}
-					<a href="{{ URL::route('users.all') }}" class="btn btn-default">Retour</a>
+					<a href="{{ URL::route('users.index') }}" class="btn btn-default">Retour</a>
 				</div>
 			{{ Form::close() }}
 		@else

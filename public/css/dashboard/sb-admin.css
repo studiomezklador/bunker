@@ -223,4 +223,6 @@ ul.alert-dropdown {
     color: #df8a13;
 }
 
+li.nolink a {text-decoration:none;}
 .navbar-brand {font-size:36px; color:#ddd!important; font-family: 'Raleway', sans-serif;}
+.activuser {font-weight:bold;}

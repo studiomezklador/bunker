@@ -3,18 +3,8 @@
 @section('content')
 
 	<div class="row">
-		@if (Session::has('msg'))
-			<div class="alert alert-success">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<h4>AVERTISSEMENT !</h4>
-				<p>{{ Session::get('msg') }}</p>
-			</div>
-		@endif
-	</div>
-
-	<div class="row">
 		@if ($users)
-			<h1>Liste de tous les utilisateurs</h1>
+			<h1>Liste des les utilisateurs</h1>
 			<table class="table table-stripped table-responsive">
 				<thead>
 					<tr>
@@ -30,7 +20,7 @@
 					<td>{{ $user->id }}</td>
 					<td><a href="{{ URL::route('users.edit', $user->id) }}">{{ $user->username }}</a></td>
 					<td>{{ $user->email }}</td>
-					<td><a href="{{ URL::route('users.destroy', $user->id) }}" class="btn btn-sm btn-danger">Supprimer</a></td>
+					<td><a href="{{ URL::route('users.delete', $user->id) }}" class="btn btn-sm btn-danger">Supprimer</a></td>
 				</tr>
 			@endforeach
 				</tbody>

@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">[ The BUNKER ]</a>
+                <a class="navbar-brand" href="{{ URL::route('home') }}">[ The BUNKER ]</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -157,7 +157,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="{{ URL::route('home') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> Utilisateurs <i class="fa fa-fw"></i></a>
@@ -166,7 +166,7 @@
                                 <a href="{{ URL::route('users.create') }}" class=""><span class="glyphicon glyphicon-new-window"></span> Créer un pseudo</a>
                             </li>
                             <li>
-                                <a href="{{ URL::route('users.all') }}"><span class="glyphicon glyphicon-list"></span> Liste des pseudos</a>
+                                <a href="{{ URL::route('users.index') }}"><span class="glyphicon glyphicon-list"></span> Liste des pseudos</a>
                             </li>
                         </ul>
                     </li>
@@ -207,6 +207,11 @@
         <div id="page-wrapper">
 
             <div class="container-fluid">
+
+                @if (Session::has('msg'))
+                    <!-- ALERT BOX -->
+                    @include('partials.alert', array('msg' => Session::get('msg')))
+                @endif
 
                 @yield('content')
 
