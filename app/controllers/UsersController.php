@@ -41,8 +41,8 @@ class UsersController extends \BaseController {
 	public function store()
 	{
 		$user = new User;
-		$user->username = Input::get('username');
-		$user->email = Input::get('email');
+		$user->username = strtolower(Input::get('username'));
+		$user->email = strtolower(Input::get('email'));
 		$user->password = Hash::make(Input::get('password'));
 
 		$user->save();
@@ -83,14 +83,15 @@ class UsersController extends \BaseController {
 			$pwd = "<li>mot de passe</li>";
 		}
 		if (Input::get('username') != $user->username) {
-			$user->username = Input::get('username');
+			$user->username = strtolower(Input::get('username'));
 			$usename = "<li>pseudo</li>";
 		}
 		if (Input::get('email') != $user->email) {
-			$user->email = Input::get('email');
+			$user->email = strtolower(Input::get('email'));
 			$email = "<li>email</li>";
 		}
 		$user->save();
+
 		$infos = ($usename || $email || $pwd) ? "Informations mises à jour : <ol>$usename $email $pwd</ol>" : "Aucune mise à jour.";
 
 		return Redirect::back()->with(['msg' => $infos]);
@@ -106,8 +107,12 @@ class UsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
+		// Get the username (for msg)
+
 		$user = User::findOrFail($id);
 		$name = $user->username;
+
+		// Then : destroy it
 		$user->destroy($id);
 		return Redirect::route('users.index')->with(['msg' => "Le Pseudo <strong>$name</strong> a été supprimé."]);
 	}
