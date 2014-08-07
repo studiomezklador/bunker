@@ -29,4 +29,4 @@ Route::post('users/edit/{id}', ['as' => 'users.update', 'uses' => 'UsersControll
 * DASHBOARD : Posts Management System
 */
 
-Route:get('posts', ['as' => 'posts.index', 'uses' => 'PostsController@index'])->before('auth');
+Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostsController@index'])->before('auth');
