@@ -24,3 +24,9 @@ Route::post('users/store', ['as' => 'users.store', 'uses' => 'UsersController@st
 Route::get('users/edit/{id}', ['as' => 'users.edit', 'uses' => 'UsersController@show'])->before('auth');
 Route::post('users/edit/{id}', ['as' => 'users.update', 'uses' => 'UsersController@update'])->before('auth');
 // Route::resource('users', 'UsersController');
+
+/*
+* DASHBOARD : Posts Management System
+*/
+
+Route:get('posts', ['as' => 'posts.index', 'uses' => 'PostsController@index'])->before('auth');
