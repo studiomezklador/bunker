@@ -1,6 +1,6 @@
 <?php 
 
-class PostController extends BaseController{
+class PostsController extends BaseController{
 	protected $user;
 
 	public function __construct(User $user)
