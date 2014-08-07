@@ -19,7 +19,7 @@
 				<tr>
 					<td>{{ $post->id }}</td>
 					<td><a href="#">{{ $post->title }}</a></td>
-					<td>{{ User::find($post->users_id)->first()->username }}</td>
+					<td>{{ User::find($post->users_id)->username }}</td>
 					<td><a href="#">{{ $post->categories_id }}</a></td>
 				</tr>
 			@endforeach
