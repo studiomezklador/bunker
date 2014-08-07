@@ -234,6 +234,7 @@
     <script src="js/dashboard/raphael.min.js"></script>
     <script src="js/dashboard/morris.min.js"></script>
     <script src="js/dashboard/morris-data.js"></script>
+    <script src="js/dashboard/xtras.js"></script>
 
 </body>
 

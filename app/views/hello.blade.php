@@ -18,7 +18,7 @@
                 @else
                     <?php $class = 'class="activuser"'; ?>
                 @endif
-                <li class="nolink"><a href="{{ URL::route('users.edit', $guy->id) }}" {{ $class }}>{{ $guy->username }}</a></li>
+                <li class="nolink"><span class="glyphicon glyphicon-user"></span> <span class="glyphicon-class"><a href="{{ URL::route('users.edit', $guy->id) }}" {{ $class }}>{{ $guy->username }}</a></span></li>
             @endforeach
         </ol>
 	</div>
