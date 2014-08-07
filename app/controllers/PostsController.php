@@ -10,7 +10,7 @@ class PostController extends BaseController{
 
 	public function index()
 	{
-		$posts = Posts:get();
+		$posts = Posts::get();
 		return View::make('posts.index', compact('posts'));
 	}
 }
