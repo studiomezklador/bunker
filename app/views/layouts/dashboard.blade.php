@@ -160,8 +160,8 @@
                         <a href="{{ URL::route('home') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-user"></i> Utilisateurs <i class="fa fa-fw"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#pseudos"><i class="fa fa-fw fa-user"></i> Utilisateurs <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="pseudos" class="collapse">
                             <li>
                                 <a href="{{ URL::route('users.create') }}" class=""><span class="glyphicon glyphicon-new-window"></span> Créer un pseudo</a>
                             </li>
@@ -171,7 +171,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-file"></i> Blog <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="posts" class="collapse">
+                            <li>
+                                <a href="{{ URL::route('posts.index') }}"><i class="fa fa-fw fa-table"></i> Liste des Articles</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-edit"></i> Créer un Article</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-table"></i> Tables</a>
