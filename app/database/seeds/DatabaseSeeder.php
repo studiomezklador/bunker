@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder {
 		
 		$this->call('PostsTableSeeder');
 		$this->command->info('Posts Table successfully seeded!');
+
+		$this->call('CategoriesTableSeeder');
+		$this->command->info('Categories Table successfully seeded!');
 	}
 
 }

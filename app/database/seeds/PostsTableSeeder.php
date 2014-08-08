@@ -18,10 +18,11 @@ class PostsTableSeeder extends Seeder {
 
 		    $user = Post::create([
 		    	'users_id' => rand(1, $total_users),
-		        'categories_id' => rand(0,9),
+		        'categories_id' => rand(1,11),
 		        'title' => $title,
 		        'slug' => preg_replace('/[^a-z0-9\-]+/i', '', str_replace(' ','-',strtolower($title))),
 		        'content' => $faker->realText(rand(10,100)),
+		        'publish' => $faker->boolean()
 		    ]);
 		}
 
