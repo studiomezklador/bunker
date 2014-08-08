@@ -26,7 +26,10 @@ class PostsController extends BaseController{
 	}
 
 	public function store($id){
-		return Redirect::route('posts.index')->with(['msg' => 'Article modifié avec succès.']);
+		$post = Post::findOrFail($id);
+		$title = Input::get('title');
+		$post->update(Input::all());
+		return Redirect::route('posts.index')->with(['msg' => "L'Article <strong>$title</strong> a été modifié avec succès."]);
 	}
 
 }
