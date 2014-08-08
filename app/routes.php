@@ -30,3 +30,6 @@ Route::post('users/edit/{id}', ['as' => 'users.update', 'uses' => 'UsersControll
 */
 
 Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostsController@index'])->before('auth');
+Route::get('posts/{id}', ['as' => 'posts.show', 'uses' => 'PostsController@show'])->before('auth');
+Route::get('posts/{id}/edit', ['as' => 'posts.edit', 'uses' => 'PostsController@edit'])->before('auth');
+Route::post('posts/{id}/store', ['as' => 'posts.store', 'uses' => 'PostsController@store'])->before('auth');
