@@ -177,7 +177,7 @@
                                 <a href="{{ URL::route('posts.index') }}"><i class="fa fa-fw fa-table"></i> Liste des Articles</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-edit"></i> Créer un Article</a>
+                                <a href="{{ URL::route('posts.create') }}"><i class="fa fa-fw fa-edit"></i> Créer un Article</a>
                             </li>
                         </ul>
                     </li>

@@ -20,7 +20,7 @@
 				<p>{{ Form::textarea('content', null, ['class' => 'form-control', 'rows' => '25']) }}</p>
 			</div>
 			{{ Form::submit('Créer', ['class' => 'btn btn-danger']) }}
-			<button href="{{ route('posts.index') }}" type="button" class="btn btn-primary">Annuler</button>
+			<a href="{{ route('posts.index') }}" type="button" class="btn btn-primary">Annuler</a>
 		</div>
 	</div>
 	{{ Form::close() }}
