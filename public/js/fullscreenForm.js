@@ -70,7 +70,7 @@
 		// show [current field]/[total fields] status
 		ctrlNavPosition : true,
 		// reached the review and submit step
-		onReview : function() { return false; }
+		onReview : function() { return true; }
 	};
 
 	/**

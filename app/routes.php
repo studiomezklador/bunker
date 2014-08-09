@@ -30,6 +30,8 @@ Route::post('users/edit/{id}', ['as' => 'users.update', 'uses' => 'UsersControll
 */
 
 Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostsController@index'])->before('auth');
+Route::get('posts/create', ['as' => 'posts.create', 'uses' => 'PostsController@create'])->before('auth');
 Route::get('posts/{id}', ['as' => 'posts.show', 'uses' => 'PostsController@show'])->before('auth');
 Route::get('posts/{id}/edit', ['as' => 'posts.edit', 'uses' => 'PostsController@edit'])->before('auth');
+Route::post('posts/insert/{user}', ['as' => 'posts.insert', 'uses' => 'PostsController@insert'])->before('auth');
 Route::post('posts/{id}/store', ['as' => 'posts.store', 'uses' => 'PostsController@store'])->before('auth');
