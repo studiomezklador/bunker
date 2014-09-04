@@ -51,7 +51,7 @@ class PostsController extends BaseController{
 		$alert = "";
 
 		if ($post->title != $title) {
-			$slug = Slug::make($input['title']);
+			$slug = Slug::make($input['title'], 3);
 			$input['slug'] = $slug;
 			$alert = "<p>Le slug a été modifié selon le titre, sous la forme : $slug</p>";
 		}

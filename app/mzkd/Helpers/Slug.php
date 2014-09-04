@@ -44,9 +44,18 @@ class Slug {
     *
     */
 
-    public static function make($str)
+    public static function make($str, $long = 5)
     {
+
+        $wrds = explode(' ', $str);
+
+        if (count($wrds) > $long) {
+            $new_str = array_slice($wrds, 0, $long);
+            $str = implode(' ', $new_str);
+        }
+
         self::$string = $str;
+
         return mb_strtolower(preg_replace(array('/[^a-zA-Z0-9 \'-]/', '/[ -\']+/', '/^-|-$/'),
       array('', '-', ''), str_replace(self::$a, self::$b, self::$string)));
     }
