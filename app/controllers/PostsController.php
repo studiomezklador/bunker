@@ -1,5 +1,7 @@
 <?php
 
+use mzkd\Helpers\Slug as Slug;
+
 class PostsController extends BaseController{
 	protected $user;
 
@@ -33,12 +35,30 @@ class PostsController extends BaseController{
 	}
 
 	public function store($id){
+
+		$input = [
+			'title' => Input::get('title'),
+			'slug' => Input::get('slug'),
+			'user_id' => Input::get('users_id'),
+			'content' => Input::get('content'),
+			'category' => Input::get('category')
+		];
+
 		$title = Input::get('title');
 
 		$post = Post::findOrFail($id);
-		$post->update(Input::all());
 
-		return Redirect::route('posts.index')->with(['msg' => "L'Article <strong>$title</strong> a été modifié avec succès."]);
+		$alert = "";
+
+		if ($post->title != $title) {
+			$slug = Slug::make($input['title']);
+			$input['slug'] = $slug;
+			$alert = "<p>Le slug a été modifié selon le titre, sous la forme : $slug</p>";
+		}
+
+		$post->update($input);
+
+		return Redirect::route('posts.index')->with(['msg' => "<p class='lead'>L'Article <strong>$title</strong> a été modifié avec succès.</p>".$alert]);
 	}
 
 	public function insert($user)

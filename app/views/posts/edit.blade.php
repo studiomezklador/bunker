@@ -13,7 +13,7 @@
 	<div class="row">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				Créé par {{ User::find($post->users_id)->username }}, le {{ $post->created_at }}
+				Créé par {{ User::find($post->users_id)->username }}, le {{ $post->created_at }} et modifié le {{ $post->updated_at }}
 			</div>
 			<div class="panel-body">
 				<p>{{ Form::textarea('content', $post->content, ['class' => 'form-control', 'rows' => '25']) }}</p>
